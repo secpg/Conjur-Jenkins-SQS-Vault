@@ -41,13 +41,12 @@ $ conjur policy load --as-group security_admin policy.yml
 2. Install CyberArk Conjur CLI on Jenkins Master.  Copy latest .deb release from [cyberark/conjur-cli](https://github.com/cyberark/conjur-cli/releases).
 ```
 $ sudo curl -L -O https://github.com/cyberark/conjur-cli/releases/download/v5.4.0/conjur_5.4.0-1_amd64.deb
-$ sudo dpkg -i ./conjur_5.4.0-1_amd64.deb
-$ sudo apt-get install -f
+$ sudo dpkg -i conjur_5.4.0-1_amd64.deb
 ```
 3. Do the following on the Jenkins Master:
 ```
-$ mkdir ~/src
-$ cd ~
+$ mkdir -p /demo/src
+$ cd /demo
 ```
 4. Copy [identify.sh](identify.sh) to the user running Jenkins' home directory on the Jenkins Master and change the commented variables for your environment.
 5. Login to the CyberArk Conjur UI, click on "Layers" in the left sidebar navigation and select the Layer created by our [policy.yml](policy.yml).
